@@ -8,10 +8,10 @@ import java.util.List;
  *
  */
 public class StringCalculator {
-    public static int count = 0;
+    public int count = 0;
 
     public int getCalledCount() {
-        return count;
+        return this.count;
     }
 
     private List<Integer> checkNegativeIntegers(List<Integer> numberList) {
@@ -38,7 +38,9 @@ public class StringCalculator {
         String[] numbers = number.split("[\n" + delimeter + "]");
         List<Integer> numberList = new ArrayList<Integer>();
         for (String string : numbers) {
-            numberList.add(Integer.valueOf(string));
+            int num=Integer.valueOf(string);
+            if(num<=1000)
+                numberList.add(num);
         }
         List<Integer> negativeIntegers = checkNegativeIntegers(numberList);
         if (negativeIntegers.size() > 0) {

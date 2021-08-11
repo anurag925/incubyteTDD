@@ -74,7 +74,7 @@ public class StringCalculatorTest
     @Test
     public void testAddIgnoreBigNumber(){
         StringCalculator stringCalculator=new StringCalculator();
-        int actual=stringCalculator.add("//;\n1;2;1000");
+        int actual=stringCalculator.add("//;\n1;2;1001");
         int excepted=3;
         assertEquals("Adding number ignoring number more than 1000",excepted,actual);
     }
