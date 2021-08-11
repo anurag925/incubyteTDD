@@ -41,14 +41,26 @@ public class StringCalculatorTest
         StringCalculator stringCalculator=new StringCalculator();
         int actual=stringCalculator.add("1,2,3,4");
         int excepted=10;
-        assertEquals("Adding Two number",excepted,actual);
+        assertEquals("Adding Any number",excepted,actual);
     }
     @Test
     public void testAddNewLine(){
         StringCalculator stringCalculator=new StringCalculator();
         int actual=stringCalculator.add("1\n2,3,4");
         int excepted=10;
-        assertEquals("Adding Two number",excepted,actual);
+        assertEquals("Adding Two number including new line",excepted,actual);
+    }
+    @Test
+    public void testAddDelimiterFeature(){
+        StringCalculator stringCalculator=new StringCalculator();
+        int actual=stringCalculator.add("//;\n1;2;3");
+        int excepted=6;
+        assertEquals("Adding Two number with changed delimiter",excepted,actual);
+    }
+    @Test(expected = RuntimeException.class)
+    public void testAddNegativeNumbers(){
+        StringCalculator stringCalculator=new StringCalculator();
+        int actual=stringCalculator.add("//;\n1;2;3;-1;-2;-3;6");
     }
 
 
