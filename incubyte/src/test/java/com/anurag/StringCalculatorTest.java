@@ -19,7 +19,14 @@ public class StringCalculatorTest
         StringCalculator stringCalculator=new StringCalculator();
         int actual=stringCalculator.add("");
         int excepted=0;
-        assertEquals("Test Case for checking result of empty string",excepted,actual);
+        assertEquals("Checking result of empty string",excepted,actual);
         
+    }
+    @Test
+    public void testAddTwoNumber(){
+        StringCalculator stringCalculator=new StringCalculator();
+        int actual=stringCalculator.add("1");
+        int excepted=1;
+        assertEquals("Adding one number",excepted,actual);
     }
 }

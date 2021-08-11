@@ -7,6 +7,8 @@ package com.anurag;
 public class StringCalculator 
 {
     public int add(String number) {
-        return 0; 
+        if(number.equals("")) return 0;
+        if(number.length()==1) return Integer.valueOf(number);
+        return 0;
     }
 }
