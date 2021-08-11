@@ -71,6 +71,13 @@ public class StringCalculatorTest
         int excepted=3;
         assertEquals("Get count of number of time Add is Invocated",excepted,stringCalculator.getCalledCount());
     }
+    @Test
+    public void testAddIgnoreBigNumber(){
+        StringCalculator stringCalculator=new StringCalculator();
+        int actual=stringCalculator.add("//;\n1;2;1000");
+        int excepted=3;
+        assertEquals("Adding number ignoring number more than 1000",excepted,actual);
+    }
 
 
 }
