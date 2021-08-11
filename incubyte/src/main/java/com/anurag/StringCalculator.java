@@ -33,9 +33,12 @@ public class StringCalculator {
         if (number.substring(0, 2).equals("//")) {
             String split[] = number.substring(2).split("\n", 2);
             delimeter = split[0];
+            if(delimeter.length()>1){
+                delimeter=delimeter.substring(1,delimeter.length()-1);
+            }
             number = split[1];
         }
-        String[] numbers = number.split("[\n" + delimeter + "]");
+        String[] numbers = number.split(delimeter+"|\\n");
         List<Integer> numberList = new ArrayList<Integer>();
         for (String string : numbers) {
             int num=Integer.valueOf(string);
