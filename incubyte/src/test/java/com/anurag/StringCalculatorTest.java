@@ -43,5 +43,13 @@ public class StringCalculatorTest
         int excepted=10;
         assertEquals("Adding Two number",excepted,actual);
     }
+    @Test
+    public void testAddNewLine(){
+        StringCalculator stringCalculator=new StringCalculator();
+        int actual=stringCalculator.add("1\n2,3,4");
+        int excepted=10;
+        assertEquals("Adding Two number",excepted,actual);
+    }
+
 
 }
