@@ -23,10 +23,18 @@ public class StringCalculatorTest
         
     }
     @Test
-    public void testAddTwoNumber(){
+    public void testAddOneNumber(){
         StringCalculator stringCalculator=new StringCalculator();
         int actual=stringCalculator.add("1");
         int excepted=1;
         assertEquals("Adding one number",excepted,actual);
     }
+    @Test
+    public void testAddTwoNumber(){
+        StringCalculator stringCalculator=new StringCalculator();
+        int actual=stringCalculator.add("1,2");
+        int excepted=3;
+        assertEquals("Adding Two number",excepted,actual);
+    }
+
 }
