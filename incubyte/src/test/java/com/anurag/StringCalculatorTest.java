@@ -78,6 +78,13 @@ public class StringCalculatorTest
         int excepted=3;
         assertEquals("Adding number ignoring number more than 1000",excepted,actual);
     }
+    @Test
+    public void testAddDelimiterMultipleLength(){
+        StringCalculator stringCalculator=new StringCalculator();
+        int actual=stringCalculator.add("//[;;]\n1;;2;;;3");
+        int excepted=6;
+        assertEquals("Adding Numbers with delimeter length more than 1",excepted,actual);
+    }
 
 
 }
