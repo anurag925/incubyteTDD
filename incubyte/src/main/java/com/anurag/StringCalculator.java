@@ -8,6 +8,12 @@ import java.util.List;
  *
  */
 public class StringCalculator {
+    public static int count = 0;
+
+    public int getCalledCount() {
+        return count;
+    }
+
     private List<Integer> checkNegativeIntegers(List<Integer> numberList) {
         List<Integer> negativeNumbers = new ArrayList<>();
         for (Integer integer : numberList) {
@@ -18,6 +24,7 @@ public class StringCalculator {
     }
 
     public int add(String number) {
+        count++;
         if (number.equals(""))
             return 0;
         if (number.length() == 1)
