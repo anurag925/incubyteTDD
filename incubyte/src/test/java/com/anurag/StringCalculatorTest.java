@@ -36,5 +36,12 @@ public class StringCalculatorTest
         int excepted=3;
         assertEquals("Adding Two number",excepted,actual);
     }
+    @Test
+    public void testAddAnyNumbers(){
+        StringCalculator stringCalculator=new StringCalculator();
+        int actual=stringCalculator.add("1,2,3,4");
+        int excepted=10;
+        assertEquals("Adding Two number",excepted,actual);
+    }
 
 }
