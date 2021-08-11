@@ -10,6 +10,10 @@ public class StringCalculator
         if(number.equals("")) return 0;
         if(number.length()==1) return Integer.valueOf(number);
         String[] numbers=number.split(",");
-        return Integer.valueOf(numbers[0])+Integer.valueOf(numbers[1]);
+        int sum=0;
+        for (String string : numbers) {
+            sum+=Integer.valueOf(string);
+        }
+        return sum;
     }
 }
