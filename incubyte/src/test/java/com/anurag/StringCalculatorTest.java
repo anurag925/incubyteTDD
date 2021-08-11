@@ -62,6 +62,15 @@ public class StringCalculatorTest
         StringCalculator stringCalculator=new StringCalculator();
         int actual=stringCalculator.add("//;\n1;2;3;-1;-2;-3;6");
     }
+    @Test
+    public void testCountAddInvoke(){
+        StringCalculator stringCalculator=new StringCalculator();
+        stringCalculator.add("//;\n1;2;3");
+        stringCalculator.add("//;\n1;2;3");
+        stringCalculator.add("//;\n1;2;3");
+        int excepted=3;
+        assertEquals("Get count of number of time Add is Invocated",excepted,stringCalculator.getCalledCount());
+    }
 
 
 }
