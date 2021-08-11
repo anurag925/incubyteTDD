@@ -85,6 +85,12 @@ public class StringCalculatorTest
         int excepted=6;
         assertEquals("Adding Numbers with delimeter length more than 1",excepted,actual);
     }
+    public void testAddDelimiterMultiple(){
+        StringCalculator stringCalculator=new StringCalculator();
+        int actual=stringCalculator.add("//[*][%]\n1*2%3");
+        int excepted=6;
+        assertEquals("Adding Numbers with delimeter length more than 1",excepted,actual);
+    }
 
 
 }
