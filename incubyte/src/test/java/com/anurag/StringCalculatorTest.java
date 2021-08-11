@@ -1,7 +1,6 @@
 package com.anurag;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -85,12 +84,18 @@ public class StringCalculatorTest
         int excepted=6;
         assertEquals("Adding Numbers with delimeter length more than 1",excepted,actual);
     }
+    @Test
     public void testAddDelimiterMultiple(){
         StringCalculator stringCalculator=new StringCalculator();
         int actual=stringCalculator.add("//[*][%]\n1*2%3");
         int excepted=6;
-        assertEquals("Adding Numbers with delimeter length more than 1",excepted,actual);
+        assertEquals("Adding Numbers with delimeter more than 1",excepted,actual);
     }
-
-
+    @Test
+    public void testAddDelimiterMultipleWithMultipleLength(){
+        StringCalculator stringCalculator=new StringCalculator();
+        int actual=stringCalculator.add("//[**][%%]\n1**2%%3");
+        int excepted=6;
+        assertEquals("Adding Numbers with delimeter and length more than 1",excepted,actual);
+    }
 }
